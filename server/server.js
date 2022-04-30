@@ -20,14 +20,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Separated Routes for each Resource
-// const usersRoutes = require("./routes/users");
-// const journalsRoutes = require("./routes/journals");
-// const modeRoutes = require("./routes/mode");
+const usersRoutes = require("./routes/users");
 
 // Mount all resource routes
-// app.use("/api/users", usersRoutes(db));
-// app.use("/api/journals", journalsRoutes(db));
-// app.use("/api/mode", modeRoutes());
+app.use("/api/users", usersRoutes(db));
 
 app.use((err, req, res, next) => {
   console.log(err);
