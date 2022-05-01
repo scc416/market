@@ -1,3 +1,3 @@
 # Market
 
-- [Favicon](https://www.flaticon.com/premium-icon/trading_3164787) created by [alkhalifi design](https://www.flaticon.com/authors/alkhalifi-design) - [Flaticon](https://www.flaticon.com/)
+- [Favicon](https://www.flaticon.com/premium-icon/price-tag_721550) created by [edt.im](https://www.flaticon.com/authors/edtim) - [Flaticon](https://www.flaticon.com/)
