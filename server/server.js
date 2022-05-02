@@ -6,6 +6,12 @@ const PORT = process.env.PORT || 8080;
 const express = require("express");
 const app = express();
 
+//SocketIo config
+const { createServer } = require("http");
+const { Server } = require("socket.io");
+const httpServer = createServer(app);
+const io = new Server(httpServer);
+
 // Set up cookie-session
 const cookieSession = require("cookie-session");
 app.use(cookieSession({ secret: process.env.SECRET }));
@@ -31,6 +37,6 @@ app.use((err, req, res, next) => {
   next();
 });
 
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
