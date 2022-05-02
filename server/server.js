@@ -1,6 +1,10 @@
 // load .env data into process.env
 require("dotenv").config();
 
+let users = [];
+const { clientsHelperFunctionGenerator } = require("./helpers");
+const { addUser, removeUser } = clientsHelperFunctionGenerator(users);
+
 // Web server config
 const PORT = process.env.PORT || 8080;
 const express = require("express");
@@ -10,7 +14,25 @@ const app = express();
 const { createServer } = require("http");
 const { Server } = require("socket.io");
 const httpServer = createServer(app);
-const io = new Server(httpServer);
+const io = new Server(httpServer, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+io.on("connection", (socket) => {
+  console.log("a new user connected");
+  console.log("Connected socketId:", socket.id);
+  addUser(socket.id);
+  console.log(users);
+  io.to(socket.id).emit("hello");
+
+  socket.on("disconnect", () => {
+    removeUser(socket.id);
+    console.log(users);
+  });
+});
 
 // Set up cookie-session
 const cookieSession = require("cookie-session");
