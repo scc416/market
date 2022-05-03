@@ -1,5 +1,3 @@
-let users = [];
-
 const clientsHelperFunctionGenerator = (users) => {
   const addUser = (socketId) => {
     users.push(socketId);
