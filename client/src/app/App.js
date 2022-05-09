@@ -8,9 +8,11 @@ const App = () => {
   return (
     <>
       <NavBar />
-      <Routes>
-        <Route path="/" element={<>Hello</>} />
-      </Routes>
+      <div>
+        <Routes>
+          <Route path="/" element={<>Hello</>} />
+        </Routes>
+      </div>
     </>
   );
 };
