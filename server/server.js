@@ -2,7 +2,7 @@
 require("dotenv").config();
 
 let users = [];
-const { clientsHelperFunctionGenerator } = require("./helpers");
+const { clientsHelperFunctionGenerator } = require("./helpers/users");
 const { addUser, removeUser } = clientsHelperFunctionGenerator(users);
 
 // Web server config
@@ -49,9 +49,11 @@ app.use(express.urlencoded({ extended: true }));
 
 // Separated Routes for each Resource
 const usersRoutes = require("./routes/users");
+const categoriesRoutes = require("./routes/categories");
 
 // Mount all resource routes
 app.use("/api/users", usersRoutes(db));
+app.use("/api/categories", categoriesRoutes(db));
 
 app.use((err, req, res, next) => {
   console.log(err);
