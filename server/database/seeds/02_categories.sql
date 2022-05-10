@@ -3,5 +3,7 @@ VALUES
   ('Fashion'),
   ('Home & living') ,
   ('Mobiles & Electronics'),
-  ('Hobbies & Games')
+  ('Hobbies & Games'),
+  ('Cars'),
+  ('Others')
  ;

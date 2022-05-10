@@ -5,6 +5,6 @@ CREATE TABLE products (
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   date DATE NOT NULL,
   title varchar,
-  category_id  INTEGER REFERENCES categories(id) ON DELETE CASCADE,
+  subsubcategory_id  INTEGER REFERENCES subsubcategories(id) ON DELETE CASCADE,
   description varchar
 );
