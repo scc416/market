@@ -7,13 +7,13 @@ import "./Carousell.css";
 
 const Carousell = () => {
   return (
-    <>
+    <div className="carousell">
       <img src={banner1} alt="" />
       <img src={banner2} alt="" />
       <img src={banner3} alt="" />
       <img src={banner4} alt="" />
       <img src={banner5} alt="" />
-    </>
+    </div>
   );
 };
 
